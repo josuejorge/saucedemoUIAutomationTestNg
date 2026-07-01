@@ -1,0 +1,33 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# TestNG
+test-output/
+
+# Selenium / evidências
+screenshots/
+evidence/
+downloads/
+
+# Allure (caso seja adicionado futuramente)
+allure-results/
+allure-report/
+.allure/
+
+# OS
+.DS_Store
+Thumbs.db
