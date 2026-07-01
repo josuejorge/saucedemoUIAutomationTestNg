@@ -17,6 +17,7 @@ public class LoginPage {
     private final By usernameInput = By.id("user-name");
     private final By passwordInput = By.id("password");
     private final By loginButton   = By.id("login-button");
+    private final By errorMessage  = By.cssSelector("[data-test='error']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -54,5 +55,9 @@ public class LoginPage {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public String getErrorMessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage)).getText();
     }
 }

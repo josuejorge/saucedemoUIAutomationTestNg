@@ -25,7 +25,10 @@ public class ConfigReader {
         return properties.getProperty(key);
     }
 
-    public static String getBaseUrl()  { return get("base.url");  }
-    public static String getUsername() { return get("username");  }
-    public static String getPassword() { return get("password");  }
+    public static String getBaseUrl()         { return get("base.url");         }
+    public static String getUsername()        { return get("username");         }
+    public static String getPassword()        { return get("password");         }
+    public static String getLockedUsername()  { return get("locked.username");  }
+    public static String getInvalidUsername() { return get("invalid.username"); }
+    public static String getInvalidPassword() { return get("invalid.password"); }
 }
