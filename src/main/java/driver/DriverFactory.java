@@ -12,7 +12,8 @@ public class DriverFactory {
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", Map.of(
                 "credentials_enable_service", false,
-                "profile.password_manager_enabled", false
+                "profile.password_manager_enabled", false,
+                "profile.password_manager_leak_detection", false
         ));
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
