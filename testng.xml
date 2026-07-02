@@ -6,6 +6,16 @@
             <class name="tests.LoginTest"/>
         </classes>
     </test>
+    <test name="Home Tests">
+        <classes>
+            <class name="tests.HomeTest"/>
+        </classes>
+    </test>
+    <test name="Cards Tests">
+        <classes>
+            <class name="tests.CardsTest"/>
+        </classes>
+    </test>
     <test name="Cart Tests">
         <classes>
             <class name="tests.CartTest"/>
