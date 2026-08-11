@@ -1,6 +1,7 @@
 package pages;
 
 import config.ConfigReader;
+import utils.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +29,7 @@ public class LoginPage {
     public void navigate() {
         driver.get(ConfigReader.getBaseUrl());
         ((JavascriptExecutor) driver).executeScript("window.localStorage.clear();");
+        StepLogger.step(driver, "Navegou para a página de login");
     }
 
     public WebElement getUsernameInput() {
@@ -48,6 +50,7 @@ public class LoginPage {
         getPasswordInput().clear();
         getPasswordInput().sendKeys(password);
         getLoginButton().click();
+        StepLogger.step(driver, "Preencheu usuário '" + username + "' e clicou em Login");
     }
 
     public boolean isLoginSuccessful() {

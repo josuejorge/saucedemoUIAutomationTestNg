@@ -1,5 +1,6 @@
 package pages;
 
+import utils.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,13 +40,16 @@ public class CartPage {
 
     public void removeFirstItem() {
         wait.until(ExpectedConditions.elementToBeClickable(removeButtons)).click();
+        StepLogger.step(driver, "Removeu o primeiro item do carrinho");
     }
 
     public void checkout() {
         wait.until(ExpectedConditions.elementToBeClickable(checkoutButton)).click();
+        StepLogger.step(driver, "Clicou em Checkout");
     }
 
     public void continueShopping() {
         wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton)).click();
+        StepLogger.step(driver, "Clicou em Continuar Comprando");
     }
 }

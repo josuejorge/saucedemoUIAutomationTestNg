@@ -1,5 +1,6 @@
 package pages;
 
+import utils.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,18 +38,22 @@ public class CheckoutPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameInput)).sendKeys(firstName);
         driver.findElement(lastNameInput).sendKeys(lastName);
         driver.findElement(postalCodeInput).sendKeys(postalCode);
+        StepLogger.step(driver, "Preencheu as informações do checkout (nome, sobrenome, CEP)");
     }
 
     public void clickContinue() {
         wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
+        StepLogger.step(driver, "Clicou em Continue para avançar no checkout");
     }
 
     public void clickCancel() {
         wait.until(ExpectedConditions.elementToBeClickable(cancelButton)).click();
+        StepLogger.step(driver, "Clicou em Cancel para cancelar o checkout");
     }
 
     public void clickFinish() {
         wait.until(ExpectedConditions.elementToBeClickable(finishButton)).click();
+        StepLogger.step(driver, "Clicou em Finish — compra finalizada");
     }
 
     public String getErrorMessage() {

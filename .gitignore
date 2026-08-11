@@ -23,6 +23,9 @@ screenshots/
 evidence/
 downloads/
 
+# Extent Reports
+extent-report/
+
 # Allure (caso seja adicionado futuramente)
 allure-results/
 allure-report/

@@ -1,5 +1,6 @@
 package pages;
 
+import utils.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,6 +41,7 @@ public class ProductPage {
 
     public void addToCart() {
         wait.until(ExpectedConditions.elementToBeClickable(addToCart)).click();
+        StepLogger.step(driver, "Adicionou o produto ao carrinho");
     }
 
     public String getCartBadgeCount() {
@@ -48,5 +50,6 @@ public class ProductPage {
 
     public void goBack() {
         wait.until(ExpectedConditions.elementToBeClickable(backButton)).click();
+        StepLogger.step(driver, "Voltou para a lista de produtos");
     }
 }

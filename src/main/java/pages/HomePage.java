@@ -1,5 +1,6 @@
 package pages;
 
+import utils.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,10 +42,12 @@ public class HomePage {
 
     public void addFirstItemToCart() {
         wait.until(ExpectedConditions.elementToBeClickable(addToCartButtons)).click();
+        StepLogger.step(driver, "Adicionou o primeiro item ao carrinho");
     }
 
     public void removeFirstItemFromCart() {
         wait.until(ExpectedConditions.elementToBeClickable(removeButtons)).click();
+        StepLogger.step(driver, "Removeu o primeiro item do carrinho");
     }
 
     public String getCartBadgeCount() {
@@ -57,15 +60,18 @@ public class HomePage {
 
     public void goToCart() {
         wait.until(ExpectedConditions.elementToBeClickable(cartLink)).click();
+        StepLogger.step(driver, "Navegou para o carrinho de compras");
     }
 
     public void clickFirstProduct() {
         wait.until(ExpectedConditions.elementToBeClickable(productNames)).click();
+        StepLogger.step(driver, "Clicou no primeiro produto da lista");
     }
 
     public void selectSort(String value) {
         WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(sortDropdown));
         new Select(dropdown).selectByValue(value);
+        StepLogger.step(driver, "Ordenou produtos por: " + value);
     }
 
     public List<String> getProductNames() {
